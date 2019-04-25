@@ -25,8 +25,6 @@ public class HomeTest{
 
 		_driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		_driver.get("https://community.liferay.com/");
-		
-		Thread.sleep(3000);
 	}
 	
 	@After

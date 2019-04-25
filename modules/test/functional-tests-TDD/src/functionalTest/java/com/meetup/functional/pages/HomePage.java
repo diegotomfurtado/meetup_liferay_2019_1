@@ -21,15 +21,15 @@ public class HomePage extends BasePages{
 	public void clickOnProjectLinkFromHeader_withoutCommonMethods() throws InterruptedException {
 		
 		Thread.sleep(3000);
-		_driver.findElement(projectLinkLocator).click();
+		_driver.findElement(_projectLinkLocator).click();
 	}
 	
 	public String getElementFromPage_withoutCommonMethods() throws InterruptedException {
 		
 		Thread.sleep(3000);
-		return _driver.findElement(projectHomePageLocator).getText();
+		return _driver.findElement(_projectHomePageLocator).getText();
 	}
 	
-	public static final By projectLinkLocator = xpath("//*[@class='navbar-item']//span[contains(text(),'Project')]");
-	public static final By projectHomePageLocator = xpath("//*[@class='projects-title' and text()='Our Projects']");
+	public static final By _projectLinkLocator = xpath("//*[@class='navbar-item']//span[contains(text(),'Project')]");
+	public static final By _projectHomePageLocator = xpath("//*[@class='projects-title' and text()='Our Projects']");
 }
