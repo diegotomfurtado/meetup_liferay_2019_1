@@ -7,14 +7,8 @@ import org.openqa.selenium.By;
 import com.liferay.gs.testFramework.FunctionalTest;
 import com.meetup.functional.utils.CommonMethods;
 
-/**
- * 
- * @author Diego Furtado
- * 
- */
-
-public class HomePage extends FunctionalTest {
-
+public class BlogPage extends FunctionalTest{
+	
 	public void clickOnProjectLinkFromHeader_withCommonMethods(){
 
 		_commonMethods.clickOnTheElement(_projectLinkLocator);
@@ -25,8 +19,8 @@ public class HomePage extends FunctionalTest {
 		return _commonMethods.getTextFromPage(_getTextProjectFromHomePageLocator);
 	}
 
-	public static final By _projectLinkLocator = xpath("//*[@class='navbar-item']//span[contains(text(),'Project')]");
-	public static final By _getTextProjectFromHomePageLocator = xpath("//*[@class='projects-title' and text()='Our Projects']");
+	public static final By _projectLinkLocator = xpath("//*[@class='navbar-item']//span[contains(text(),'Blogs')]");
+	public static final By _getTextProjectFromHomePageLocator = xpath("//*[@class='blog-title' and text()='Blogs']");
 
 	CommonMethods _commonMethods = new CommonMethods(getWebDriver());
 }

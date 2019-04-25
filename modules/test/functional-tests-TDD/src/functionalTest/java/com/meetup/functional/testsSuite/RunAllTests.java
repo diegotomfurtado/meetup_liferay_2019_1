@@ -6,6 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import com.liferay.gs.testFramework.core.ConcurrentSuite;
 import com.liferay.gs.testFramework.driver.WebDriverManager;
+import com.meetup.functional.tests.BlogsTest;
 import com.meetup.functional.tests.HomeTest;
 
 /**
@@ -15,7 +16,10 @@ import com.meetup.functional.tests.HomeTest;
  */
 
 @RunWith(ConcurrentSuite.class)
-@SuiteClasses({ HomeTest.class })
+@SuiteClasses({ 
+	HomeTest.class ,
+	BlogsTest.class
+})
 
 public class RunAllTests {
 
