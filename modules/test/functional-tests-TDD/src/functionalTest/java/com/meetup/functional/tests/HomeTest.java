@@ -2,6 +2,7 @@ package com.meetup.functional.tests;
 
 import java.util.concurrent.TimeUnit;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,15 +28,19 @@ public class HomeTest{
 		
 		Thread.sleep(3000);
 	}
+	
+	@After
+	public void stop_withoutBestPractives() throws InterruptedException {
+
+		_driver.close();
+	}
 
 	@Test
 	public void shouldClickOnProjectLinkFromHeader_validateIfTheRedirectIsRight() throws InterruptedException {
 
-		_homePage.clickOnProjectLinkFromHeader_withoutCommonMethods();
-		Assert.assertTrue(_homePage.getElementFromPage_withoutCommonMethods().contains("Our Projects"));
+		new HomePage(_driver).clickOnProjectLinkFromHeader_withoutCommonMethods();
+		Assert.assertTrue(new HomePage(_driver).getElementFromPage_withoutCommonMethods().contains("Our Projects"));
 	}
 
-	private final HomePage _homePage = new HomePage();
-	
 	private final WebDriver _driver = new ChromeDriver();
 }

@@ -4,7 +4,6 @@ import static org.openqa.selenium.By.xpath;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
  * 
@@ -12,7 +11,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
  * 
  */
 
-public class HomePage {
+public class HomePage extends BasePages{
+	
+	public HomePage(WebDriver _driver) {
+		super(_driver);
+		// TODO Auto-generated constructor stub
+	}
 
 	public void clickOnProjectLinkFromHeader_withoutCommonMethods() throws InterruptedException {
 		
@@ -25,8 +29,6 @@ public class HomePage {
 		Thread.sleep(3000);
 		return _driver.findElement(projectHomePageLocator).getText();
 	}
-	
-	private final WebDriver _driver = new ChromeDriver();
 	
 	public static final By projectLinkLocator = xpath("//*[@class='navbar-item']//span[contains(text(),'Project')]");
 	public static final By projectHomePageLocator = xpath("//*[@class='projects-title' and text()='Our Projects']");
