@@ -32,6 +32,9 @@ public class CommonMethods extends FunctionalTest {
 
 	public String getTextFromPage(By locator) {
 
+		SeleniumWaitMethods.findElementWithWaitDriver(getWebDriver(), locator,
+				ExpectedConditions::visibilityOfElementLocated);
+		
 		String getText = getWebDriver().findElement(locator).getText();
 		return getText;
 	}

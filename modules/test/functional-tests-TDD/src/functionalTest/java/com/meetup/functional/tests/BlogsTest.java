@@ -8,16 +8,9 @@ import org.junit.Test;
 
 import com.liferay.gs.testFramework.FunctionalTest;
 import com.liferay.gs.testFramework.core.SeleniumReadPropertyKeys;
-import com.meetup.functional.pages.HomePage;
+import com.meetup.functional.pages.BlogPage;
 
-
-/**
- * 
- * @author Diego Furtado
- * 
- */
-
-public class HomeTest extends FunctionalTest{
+public class BlogsTest extends FunctionalTest{
 
 	@Before
 	public void setUpAll_withBestPractives() {
@@ -29,9 +22,9 @@ public class HomeTest extends FunctionalTest{
 	@Test
 	public void shouldClickOnProjectLinkFromHeader_validateIfTheRedirectIsRight(){
 
-		_homePage.clickOnProjectLinkFromHeader_withCommonMethods();
-		Assert.assertTrue(_homePage.getElementFromPage_withCommonMethods().contains("Our Projects"));
+		_blogPage.clickOnProjectLinkFromHeader_withCommonMethods();
+		Assert.assertTrue(_blogPage.getElementFromPage_withCommonMethods().contains("Blogs"));
 	}
 
-	HomePage _homePage = new HomePage();
+	BlogPage _blogPage = new BlogPage();
 }
